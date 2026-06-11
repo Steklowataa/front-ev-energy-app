@@ -6,8 +6,8 @@ interface Props {
     intensity: Intensity | undefined
     days: DailyGenerationSummary[] | undefined
     nextDays: DailyIntensitySummary[] | undefined
-    isMainReady: boolean
-    isSmallReady: boolean
+    isMainReady: DailyGenerationSummary[] | undefined
+    isSmallReady: DailyIntensitySummary[] | undefined
 
 }
 
