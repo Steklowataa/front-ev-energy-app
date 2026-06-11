@@ -1,4 +1,4 @@
-import { Intensity, DailyGenerationSummary, DailyIntensitySummary} from "../types/energy";
+import type { Intensity, DailyGenerationSummary, DailyIntensitySummary} from "../types/energy";
 
 const BASE_URL = "http://localhost:5170/api/energy"
 

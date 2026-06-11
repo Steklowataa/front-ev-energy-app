@@ -6,8 +6,8 @@ export interface Intensity {
 }
 
 export interface IntensitySlot {
-    forecast: number | null,
-    actual: number | null,
+    forecast: number | undefined,
+    actual: number | undefined,
     index: string
 }
 

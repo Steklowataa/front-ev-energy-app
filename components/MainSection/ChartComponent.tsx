@@ -1,8 +1,8 @@
 import { PieChart, Pie, Cell } from 'recharts'
-import { DailyGenerationSummary } from '../types/energy'
+import type { DailyGenerationSummary } from '../../types/energy'
 
 interface Props {
-    day: DailyGenerationSummary
+    day: DailyGenerationSummary | undefined
 }
 
 const dirtyFuels = ['coal', 'gas', 'imports', 'other']

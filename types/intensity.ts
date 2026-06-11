@@ -1,8 +1,14 @@
-import { DailyGenerationSummary, Intensity } from "./energy"
+import type { DailyGenerationSummary, Intensity, DailyIntensitySummary } from "./energy"
 
 
 export interface Props {
-    days: DailyGenerationSummary[] | null
-    intensity: Intensity | null
-    selectDay: DailyGenerationSummary | null
+    days: DailyGenerationSummary[] | undefined
+    intensity: Intensity | undefined
+    selectDay: DailyGenerationSummary | undefined
+}
+
+export interface PropsForSmall {
+    days: DailyGenerationSummary[] | undefined
+    nextDays: DailyIntensitySummary | undefined
+
 }
