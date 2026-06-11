@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import type { Intensity, DailyGenerationSummary, DailyIntensitySummary } from "../types/energy"
 import {GetCurrentIntensity,GetDailyGenerationSummary,GetNextDaysForecast} from "../services/EnergyService"
 import MainSection from "../components/MainSection/MainSection"
+import SecondSection from "../components/SecondSection/SecondSection"
 
 export default function HomePage() {
     const [intensity, setIntensity] = useState<Intensity | undefined>(undefined)
@@ -27,6 +28,7 @@ export default function HomePage() {
     return (
       <>
         <MainSection isMainReady={isMainReady} isSmallReady={isSmallReady} intensity={intensity} days={days} nextDays={nextDays}/>
+        <SecondSection/>
       </>
     )
 }
