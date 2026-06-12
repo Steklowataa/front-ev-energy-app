@@ -21,6 +21,7 @@ export default function SearchSection() {
         try {
             const response = await GetChargingWindows({hours: parsed})
             setResult(response)
+            setHours("")
         } catch {
             showError("brak polaczenia z backendem")
         } finally {
