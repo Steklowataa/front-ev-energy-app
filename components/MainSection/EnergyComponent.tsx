@@ -1,6 +1,6 @@
 import ChartComponent from "./ChartComponent"
 import type { Props } from "../../types/intensity"
-
+import { formatDate, formatTimeToday} from "../../utils/timeFunctions"
 
 export default function EnergyComponent({ days, intensity, selectDay }: Props) {
     if (!intensity || !days) return <div>loading</div>
@@ -8,7 +8,7 @@ export default function EnergyComponent({ days, intensity, selectDay }: Props) {
     return (
         <div className="animate-fadeIn w-[312px] h-[400px] rounded-[20px] bg-[#D9D9D9]/10 backdrop-blur-sm border-2 border-[#FF9237] shadow-[0_0_30px_rgba(77,84,100,1)] flex flex-col items-center justify-center">
             <p className="font-sans text-[#D9D9D9] text-bold text-[20px]">
-                Energia {new Date().toLocaleDateString('pl-PL', { day: 'numeric', month: 'short' })} o {new Date().toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' })}
+                Energia {formatDate(days[0].date )} o {formatTimeToday()}
             </p>
             <p className="font-sans text-[26px] text-[#FF9237] font-bold">
                 {intensity.intensity.index.toUpperCase()}

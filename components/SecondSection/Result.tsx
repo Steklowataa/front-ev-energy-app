@@ -1,23 +1,36 @@
-export default function Result() {
+import type { ChargingWindow } from "../../types/energy"
+import { formatDate, formatTime } from "../../utils/timeFunctions"
+import rankStyles from "../../utils/rankingStyles"
+
+
+interface Props {
+    results: ChargingWindow[],
+}
+
+export default function Result({ results }: Props) {
     return (
         <>
-        <div>
-            <h1 className="font-orbitron font-bold text-[30px] text-white items-start justify-start mt-10">WYNIKI WYSZUKIWANIA:</h1>
-            <div className="animate-fadeIn hover:scale-105 transition-transform w-[320px] h-[210px] rounded-[10px] bg-[#54FF3E]/10 border-1 border-[#54FF3E] shadow-[0_0_30px_rgba(84,255,62,1)]">
-            <div className="flex flex-col items-start pl-4 pt-4">
-                <h1 className="font-sans font-medium text-white">wt. 10 cze, 2:00-4:00</h1>
-                 <div className="flex items-start mt-8">
-                    <span className="font-orbitron text-[44px] font-extralight text-white leading-none">
-                        83
-                    </span>
-                    <span className="font-orbitron text-[24px] text-[#D9D9D9] font-light mt-2 ml-2">OAZ %</span>
-                </div>
-                <div className="font-sans text-[#54FF3E] text-[14px] mt-2">Najlepsze okno</div>
-                <div className="font-sans font-medium text-[#D9D9D9] text-[14px] mt-8">Wind 10. Solar 20. Inne 10</div>
+            <h1 className="font-orbitron font-bold text-[30px] text-white mt-10 mb-5 w-[865px] text-left">WYNIKI WYSZUKIWANIA:</h1>
+            <div className="flex gap-4">
+                {results.map((w) => {
+                    const style = rankStyles[w.rank]
+                    return (
+                        <div key={w.rank}
+                            className={`flex-1 rounded-[10px] ${style.bg} border ${style.border} backdrop-blur-sm ${style.shadow} w-[320px] h-[200px]`}>
+                            <div className="flex flex-col items-start pl-4 pt-4 pb-4">
+                                <h2 className="font-sans font-medium text-white">{formatDate(w.from)}. {formatTime(w.from)}–{formatTime(w.to)}</h2>
+                                <div className="flex items-start mt-8">
+                                    <span className="font-orbitron text-[44px] font-extralight text-white leading-none">
+                                        {w.cleanEnergyPercent}
+                                    </span>
+                                    <span className="font-orbitron text-[24px] text-[#D9D9D9] font-light mt-2 ml-2">OAZ %</span>
+                                </div>
+                                <div className={`font-sans text-[14px] mt-2 ${style.labelColor}`}>{style.label}</div>
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
-
-            </div>
-        </div>
         </>
     )
 }
