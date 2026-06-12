@@ -7,7 +7,7 @@ https://www.figma.com/proto/tdQO1zwqepVfJiWkwDzF8t/Untitled?node-id=0-1&t=LplZf8
 ## Dodatkowe zadania
  
  - Dodałam dane o forecast, actual i index nie tylko do dnia pierwszego (dzisiaj) a jeszcze do prognozowanych dni (jutro i pojutrze)
- - Przy wyszukiwaniu okna ładowania są podane 3 wyniki (najlepsze okno, 2 i 3 miejsce). Niestety, nie ma tak żadnego zbyt genialnego algorytmu dlatego są w podobnych godzinach.
+ - Przy wyszukiwaniu okna ładowania są podane 3 wyniki (najlepsze okno, 2 i 3 miejsce).
  - Zrealizowane zostały testy jednostkowe do testowania EnergyService i poszczególnych funkcji. Testy są od Vitest + React Testing Library
 
 ## Użyte biblioteki
