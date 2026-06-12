@@ -12,7 +12,7 @@ export default function EnergyComponentSmall({ days, nextDays }: PropsForSmall) 
                     Energia {formatDate(nextDays?.date)}
                 </p>
                 <p className="font-sans text-[16px] text-[#FF9237] font-bold">{nextDays?.index.toUpperCase()}</p>
-                <div className="flex items-start mt-2 mb-10">
+                <div className="flex items-start mt-2 mb-2">
                     <span className="font-sans text-[44px] font-extralight text-white leading-none">{nextDays?.averageForecast ?? '---'}</span>
                     <span className="font-sans text-[14px] text-[#D9D9D9] font-light mt-2 ml-2">gCO2/kWh</span>
                 </div>
