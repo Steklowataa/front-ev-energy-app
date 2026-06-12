@@ -1,6 +1,6 @@
 import type { Intensity, DailyGenerationSummary, DailyIntensitySummary, ChargingWindow } from "../types/energy";
 
-const BASE_URL = "http://localhost:5170/api/energy"
+const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:5170/api/energy"
 
 export async function GetCurrentIntensity(): Promise<Intensity> {
     const response = await fetch(`${BASE_URL}/current`)
