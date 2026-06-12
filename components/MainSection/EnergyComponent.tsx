@@ -13,7 +13,7 @@ export default function EnergyComponent({ days, intensity, selectDay }: Props) {
             <p className="font-sans text-[26px] text-[#FF9237] font-bold">
                 {intensity.intensity.index.toUpperCase()}
             </p>
-            <div className="flex items-start mt-2 mb-10">
+            <div className="flex items-start mt-2 mb-2">
                 <span className="font-sans text-[64px] font-extralight text-white leading-none">
                     {intensity.intensity.forecast ?? intensity.intensity.actual}
                 </span>
