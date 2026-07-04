@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title1": "SMART EV CHARGING",
+    "title2": "DASHBOARD",
+    "subtitle": "Śledź brytyjską sieć energetyczną. Aktualny i prognozowany udział źródeł energii - dziś, jutro i pojutrze"
+  },
+  "energy": {
+    "energyAt": "Energia",
+    "unit": "gCO2/kWh",
+    "cleanEnergy": "Czysta energia"
+  },
+  "charging": {
+    "title": "Kiedy ładować?",
+    "title2": "Znajdź okno czystej ",
+    "title3": "energii",
+    "subtitle": "Zaplanuj ładowanie na moment największego udziału OZE w najbliższych 48h",
+    "hours": "Długość okna. Wpisz wartość od 1-6 godzin",
+    "search": "Znajdź okno",
+    "cleanPercent": "Czysta energia",
+    "error": "Podaj wartość od 1 do 6 godzin"
+  },
+  "error": {
+    "fetch": "Nie udało się pobrać danych. Sprawdź połączenie i odśwież stronę.",
+    "refresh": "Odśwież"
+  },
+   "result": {
+    "title": "WYNIKI WYSZUKIWANIA",
+    "unit": "OAZ %"
+  },
+  "ranking": {
+    "1": "Najlepsze okno",
+    "2": "Drugie miejsce",
+    "3": "Trzecie miejsce"
+  },
+  "fuels": {
+    "coal": "Węgiel",
+    "gas": "Gaz",
+    "imports": "Import",
+    "other": "Inne",
+    "solar": "Słońce",
+    "wind": "Wiatr",
+    "nuclear": "Jądrowa",
+    "biomass": "Biomasa",
+    "hydro": "Wodna"
+}
+}

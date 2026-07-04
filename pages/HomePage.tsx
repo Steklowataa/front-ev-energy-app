@@ -4,9 +4,9 @@ import ErrorComponent from "../components/MainSection/ErrorComponent"
 import { useEnergyData } from "../hooks/useEnergyData"
 
 export default function HomePage() {
-   const { intensity, days, nextDays, error } = useEnergyData()
-    const isMainReady = intensity && days
-    const isSmallReady = nextDays
+  const { intensity, days, nextDays, error } = useEnergyData()
+  const isMainReady = intensity && days
+  const isSmallReady = nextDays
 
     if (error) return (
        <ErrorComponent error={error}/>

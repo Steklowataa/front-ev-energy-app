@@ -3,8 +3,11 @@ import { GetChargingWindows } from "../../services/EnergyService"
 import type { ChargingWindow} from "../../types/energy"
 import Result from "./Result"
 import Error from "./Error"
+import { useTranslation } from "react-i18next"
+
 
 export default function SearchSection() {
+    const { t } = useTranslation()
     const [result, setResult] = useState<ChargingWindow[] | undefined>(undefined)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
@@ -40,7 +43,7 @@ export default function SearchSection() {
             {error && <Error errorText={error}/>}
                 <div className="mx-auto mt-10 w-[665px] h-[210px] rounded-[20px] bg-[#D9D9D9]/10 backdrop-blur-lg border-2 border-[#FF9237]">
                     <div className="px-6 py-5 h-full flex flex-col justify-center gap-2">
-                        <p className="text-[#FB7200] font-orbitron font-bold text-[14px] text-left">Długość okna. Wpisz wartość od 1-6 godzin</p>
+                        <p className="text-[#FB7200] font-orbitron font-bold text-[14px] text-left">{t("charging.hours")}</p>
                         <div className="flex items-center gap-4">
                             <input
                                 value={hours}
@@ -52,7 +55,7 @@ export default function SearchSection() {
                                 onClick={handleSearch}
                                 disabled={loading}
                                 className="bg-[#FB7200] hover:bg-[#e56a00] cursor-pointer text-white font-orbitron font-bold text-[14px] px-8 py-3 rounded-[10px] whitespace-nowrap transition-colors">
-                                Szukaj okno
+                                {t("charging.search")}
                             </button>
                         </div>
                     </div>

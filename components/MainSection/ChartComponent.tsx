@@ -1,5 +1,6 @@
 import { PieChart, Pie, Cell } from 'recharts'
 import type { DailyGenerationSummary } from '../../types/energy'
+import { useTranslation } from "react-i18next"
 
 interface Props {
     day: DailyGenerationSummary | undefined
@@ -20,6 +21,7 @@ const FUEL_COLORS: Record<string, string> = {
 }
 
 export default function ChartComponent({ day }: Props) {
+    const { t } = useTranslation()
     if (!day) return null
 
     const chartData = day.averageMix
@@ -29,7 +31,7 @@ export default function ChartComponent({ day }: Props) {
     return (
         <div className="flex flex-col items-center gap-2">
             <div className="flex flex-col items-center w-full px-2 mb-5">
-                <span className="font-sans text-[30px] font-light text-[#54FF3E] inline">{day.cleanEnergyPercent}% <span className="text-[14px] text-[#FF9237] font-medium">Czysta energia</span></span>
+                <span className="font-sans text-[30px] font-light text-[#54FF3E] inline">{day.cleanEnergyPercent}% <span className="text-[14px] text-[#FF9237] font-medium">{t("charging.cleanPercent")}</span></span>
             </div>
             <div className="flex items-center gap-4">
                 <PieChart width={120} height={120}>
@@ -51,7 +53,7 @@ export default function ChartComponent({ day }: Props) {
                         <div key={index} className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: FUEL_COLORS[entry.name] ?? '#ccc' }} />
                             <span className="text-white text-[9px] font-orbitron">
-                                {entry.name}: {entry.value}%
+                                {t(`fuels.${entry.name}`)}: {entry.value}%
                             </span>
                         </div>
                     ))}

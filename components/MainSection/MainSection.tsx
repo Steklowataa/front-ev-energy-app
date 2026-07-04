@@ -1,6 +1,8 @@
 import EnergyComponent from "./EnergyComponent"
 import EnergyComponentSmall from "./EnergyComponentSmall"
 import type { DailyGenerationSummary, DailyIntensitySummary, Intensity } from "../../types/energy"
+import { useTranslation } from "react-i18next"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 interface Props {
     intensity: Intensity | undefined
@@ -12,18 +14,20 @@ interface Props {
 }
 
 export default function MainSection({ intensity, days, nextDays, isMainReady, isSmallReady }: Props) {
+    const { t } = useTranslation()
     return (
         <main
             style={{ backgroundImage: "url('/images/planet-background.avif')" }}
             className="min-h-screen bg-cover bg-center bg-no-repeat">
+            <LanguageSwitcher />
             <div className="px-70 pt-20">
                 <div className="text-[60px] font-orbitron font-bold space-y-0">
-                    <h1 className="text-[#FFFFFF]/60">SMART EV CHARGING</h1>
-                    <h1 className="text-[#FF9237] -mt-7">DASHBOARD</h1>
+                    <h1 className="text-[#FFFFFF]/60">{t('header.title1')}</h1>
+                    <h1 className="text-[#FF9237] -mt-7">{t('header.title2')}</h1>
                 </div>
                 <div>
                     <h2 className="mt-5 font-sans text-white text-[22px] font-light w-[700px]">
-                        Śledź brytyjską sieć energetyczną. Aktualny i prognozowany udział źródeł energii - dziś, jutro i pojutrze
+                       {t('header.subtitle')}
                     </h2>
                 </div>
                 <div className="flex justify-center gap-8 mt-10 items-center">

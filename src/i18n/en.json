@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title1": "SMART EV CHARGING",
+    "title2": "DASHBOARD",
+    "subtitle": "Track the British energy grid. Current and forecasted energy source mix - today, tomorrow and the day after"
+  },
+  "energy": {
+    "energyAt": "Energy",
+    "unit": "gCO2/kWh",
+    "cleanEnergy": "Clean energy"
+  },
+  "charging": {
+    "title": "When to charge?",
+    "title2": "Find the window of clean ",
+    "title3": "energy",
+    "subtitle": "Plan your charging for the highest share of renewables in the next 48h",
+    "hours": "Charging duration. Choose hours from 1 - 6",
+    "search": "Find window",
+    "cleanPercent": "Clean energy",
+    "error": "Please enter a value between 1 and 6 hours"
+  },
+  "error": {
+    "fetch": "Failed to fetch data. Check your connection and refresh the page.",
+    "refresh": "Refresh"
+  },
+   "result": {
+    "title": "SEARCH RESULT",
+    "unit": "RES %"
+  },
+  "ranking": {
+    "1": "Best window",
+    "2": "Second place",
+    "3": "Third place"
+  },
+  "fuels": {
+    "coal": "Coal",
+    "gas": "Gas",
+    "imports": "Imports",
+    "other": "Other",
+    "solar": "Solar",
+    "wind": "Wind",
+    "nuclear": "Nuclear",
+    "biomass": "Biomass",
+    "hydro": "Hydro"
+}
+}
