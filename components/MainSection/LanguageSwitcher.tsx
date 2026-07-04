@@ -5,7 +5,7 @@ export default function LanguageSwitcher() {
     const current = i18n.language
 
     return (
-        <div className="flex justify-end gap-2 px-3">
+        <div className="flex justify-end gap-2 px-6">
             <button
                 onClick={() => i18n.changeLanguage('pl')}
                 className={`cursor-pointer font-orbitron text-[14px] ${current === 'pl' ? 'text-[#FF9237]' : 'text-white'}`}>

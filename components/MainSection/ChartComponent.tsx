@@ -1,12 +1,13 @@
 import { PieChart, Pie, Cell } from 'recharts'
 import type { DailyGenerationSummary } from '../../types/energy'
 import { useTranslation } from "react-i18next"
+import { FUEL_TYPES } from '../../types/fuel'
 
 interface Props {
     day: DailyGenerationSummary | undefined
 }
 
-const fuels = ['coal', 'gas', 'imports', 'other', 'solar', 'wind', 'nuclear', 'biomass', 'hydro']
+const fuels = Object.values(FUEL_TYPES)
 
 const FUEL_COLORS: Record<string, string> = {
     coal: '#f97316',
@@ -25,7 +26,7 @@ export default function ChartComponent({ day }: Props) {
     if (!day) return null
 
     const chartData = day.averageMix
-        .filter(item => item.perc > 0 && fuels.includes(item.fuel))
+        .filter(item => item.perc > 0 && fuels.some(f => f === item.fuel))
         .map(item => ({ name: item.fuel, value: item.perc }))
 
     return (
