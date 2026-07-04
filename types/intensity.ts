@@ -12,3 +12,11 @@ export interface PropsForSmall {
     nextDays: DailyIntensitySummary | undefined
     selectedDay: DailyGenerationSummary | undefined
 }
+
+export interface MainProps {
+    intensity: Intensity | undefined
+    days: DailyGenerationSummary[] | undefined
+    nextDays: DailyIntensitySummary[] | undefined
+    isMainReady: DailyGenerationSummary[] | undefined
+    isSmallReady: DailyIntensitySummary[] | undefined
+}
