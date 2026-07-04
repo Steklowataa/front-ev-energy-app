@@ -1,18 +1,10 @@
 import EnergyComponent from "./EnergyComponent"
 import EnergyComponentSmall from "./EnergyComponentSmall"
-import type { DailyGenerationSummary, DailyIntensitySummary, Intensity } from "../../types/energy"
 import { useTranslation } from "react-i18next"
 import LanguageSwitcher from "./LanguageSwitcher"
+import type { MainProps } from "../../types/intensity"
 
-interface Props {
-    intensity: Intensity | undefined
-    days: DailyGenerationSummary[] | undefined
-    nextDays: DailyIntensitySummary[] | undefined
-    isMainReady: DailyGenerationSummary[] | undefined
-    isSmallReady: DailyIntensitySummary[] | undefined
-}
-
-export default function MainSection({ intensity, days, nextDays, isMainReady, isSmallReady }: Props) {
+export default function MainSection({ intensity, days, nextDays, isMainReady, isSmallReady }: MainProps) {
     const { t } = useTranslation()
     return (
         <main

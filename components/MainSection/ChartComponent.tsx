@@ -27,8 +27,6 @@ export default function ChartComponent({ day }: Props) {
     const { width } = useWindowSize()
 
     if (!day) return null
-
-    // rozmiar wykresu zależny od szerokości ekranu
     const isSmallScreen = width < 768
     const chartSize = isSmallScreen ? 90 : 120
     const innerRadius = isSmallScreen ? 25 : 35
