@@ -13,7 +13,6 @@ export async function GetDailyGenerationSummary(): Promise<DailyGenerationSummar
     const response = await fetch(`${BASE_URL}/generation/three-days`)
     if (!response.ok) throw new Error("failed to fetch generation summary")
     const json = await response.json()
-    console.log(json)
     return json
 }
 

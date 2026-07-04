@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import type { Intensity, DailyGenerationSummary, DailyIntensitySummary } from "../types/energy"
 import { GetCurrentIntensity, GetDailyGenerationSummary, GetNextDaysForecast } from "../services/EnergyService"
 
+
 interface EnergyData {
     intensity: Intensity | undefined
     days: DailyGenerationSummary[] | undefined
@@ -28,7 +29,7 @@ export function useEnergyData(): EnergyData {
                 setDays(daysRes)
                 setNextDays(nextDaysRes)
             })
-            .catch(() => setError("Nie udało się pobrać danych. Sprawdź połączenie i odśwież stronę."))
+            .catch(() => setError("error.fetch"))
             .finally(() => setIsLoading(false))
     }, [])
 
