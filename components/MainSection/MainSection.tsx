@@ -40,9 +40,11 @@ export default function MainSection({ intensity, days, nextDays, isMainReady, is
                         <>
                             <EnergyComponentSmall
                                 days={days}
+                                selectedDay={days?.[1]}
                                 nextDays={nextDays?.[1]}/>
                             <EnergyComponentSmall
                                 days={days}
+                                selectedDay = {days?.[2]}
                                 nextDays={nextDays?.[2]}/>
                         </>
                     ) : (

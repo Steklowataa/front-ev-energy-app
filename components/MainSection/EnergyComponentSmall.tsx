@@ -3,7 +3,7 @@ import type { PropsForSmall } from "../../types/intensity"
 import { formatDate} from "../../utils/timeFunctions"
 
 
-export default function EnergyComponentSmall({ days, nextDays }: PropsForSmall) {
+export default function EnergyComponentSmall({ nextDays, selectedDay }: PropsForSmall) {
     return (
         <>
         <div className="animate-fadeIn w-[280px] h-[340px] rounded-[20px] bg-[#D9D9D9]/10 backdrop-blur-sm border-2 border-[#FF9237] shadow-[0_0_30px_rgba(77,84,100,1)] flex flex-col items-center justify-center">
@@ -16,7 +16,7 @@ export default function EnergyComponentSmall({ days, nextDays }: PropsForSmall) 
                     <span className="font-sans text-[44px] font-extralight text-white leading-none">{nextDays?.averageForecast ?? '---'}</span>
                     <span className="font-sans text-[14px] text-[#D9D9D9] font-light mt-2 ml-2">gCO2/kWh</span>
                 </div>
-                <ChartComponent day={days?.[1]} />
+                <ChartComponent day={selectedDay} />
             </div>
         </>
     )

@@ -10,5 +10,5 @@ export interface Props {
 export interface PropsForSmall {
     days: DailyGenerationSummary[] | undefined
     nextDays: DailyIntensitySummary | undefined
-
+    selectedDay: DailyGenerationSummary | undefined
 }
